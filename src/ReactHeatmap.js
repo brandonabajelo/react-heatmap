@@ -12,7 +12,8 @@ class ReactHeatmap extends Component {
 
 	componentDidMount() {
 		this.heatmap = Heatmap.create({
-		  container: ReactDOM.findDOMNode(this)
+		  container: ReactDOM.findDOMNode(this),
+		  opacity: .9,
 		});
 		this.setData(this.props.max, this.props.data);
 	}
