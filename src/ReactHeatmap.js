@@ -14,6 +14,9 @@ class ReactHeatmap extends Component {
 		const { cont } = this.props;
 		this.heatmap = Heatmap.create({
 		  container: cont || ReactDOM.findDOMNode(this)
+		  // container: ReactDOM.findDOMNode(this),
+		  // opacity: .9,
+		  // radius: this.props.radius,
 		});
 		this.setData(this.props.max, this.props.data);
 	}
@@ -55,6 +58,7 @@ class ReactHeatmap extends Component {
 
 ReactHeatmap.propTypes = {
 	max : PropTypes.number,
+	radius: PropType.number,
 	data : PropTypes.array,
 	unit : PropTypes.string
 }
