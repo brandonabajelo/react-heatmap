@@ -33,10 +33,11 @@ class ReactHeatmap extends Component {
 	}
 
 	computeData(data) {
+		const { cont } = this.props;
 		if(this.props.unit === 'percent') {
 			let container = {};
-			container.width = ReactDOM.findDOMNode(this).offsetWidth;
-			container.height = ReactDOM.findDOMNode(this).offsetHeight;
+			container.width = cont.offsetWidth || ReactDOM.findDOMNode(this).offsetWidth;
+			container.height = cont.offsetHeight || ReactDOM.findDOMNode(this).offsetHeight;
 			return data.map(function(values, index) {
 				return {
 					x : Math.round(values.x/100 * container.width),
