@@ -16,7 +16,7 @@ class ReactHeatmap extends Component {
 		  container: cont || ReactDOM.findDOMNode(this)
 		  // container: ReactDOM.findDOMNode(this),
 		  // opacity: .9,
-		  // radius: this.props.radius,
+		  radius: this.props.radius,
 		});
 		this.setData(this.props.max, this.props.data);
 	}
