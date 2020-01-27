@@ -16,19 +16,20 @@ class ReactHeatmap extends Component {
 		  container: cont || ReactDOM.findDOMNode(this)
 		  // container: ReactDOM.findDOMNode(this),
 		  // opacity: .9,
-		  radius: this.props.radius,
+		  // radius: this.props.radius,
 		});
-		this.setData(this.props.max, this.props.data);
+		this.setData(this.props.max, this.props.data, this.props.radius);
 	}
 
 	componentWillReceiveProps(newProps) {
-		this.setData(newProps.max, newProps.data);
+		this.setData(newProps.max, newProps.data, newProps.radius);
 	}
 
-	setData(max, data) {
+	setData(max, data, radius) {
 		this.heatmap.setData({
 		  max: max,
-		  data: this.computeData(data)
+		  data: this.computeData(data),
+		  radius: radius,
 		});
 	}
 
