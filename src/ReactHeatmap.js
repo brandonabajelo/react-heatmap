@@ -13,7 +13,7 @@ class ReactHeatmap extends Component {
 	componentDidMount() {
 		const { cont, radius } = this.props;
 		this.heatmap = Heatmap.create({
-		  container: cont || ReactDOM.findDOMNode(this)
+		  container: cont || ReactDOM.findDOMNode(this),
 		  // container: ReactDOM.findDOMNode(this),
 		  // opacity: .9,
 		  radius: radius,
