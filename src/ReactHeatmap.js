@@ -11,25 +11,24 @@ class ReactHeatmap extends Component {
 	}
 
 	componentDidMount() {
-		const { cont } = this.props;
+		const { cont, radius } = this.props;
 		this.heatmap = Heatmap.create({
 		  container: cont || ReactDOM.findDOMNode(this)
 		  // container: ReactDOM.findDOMNode(this),
 		  // opacity: .9,
-		  // radius: this.props.radius,
+		  radius: radius,
 		});
-		this.setData(this.props.max, this.props.data, this.props.radius);
+		this.setData(this.props.max, this.props.data);
 	}
 
 	componentWillReceiveProps(newProps) {
-		this.setData(newProps.max, newProps.data, newProps.radius);
+		this.setData(newProps.max, newProps.data);
 	}
 
 	setData(max, data, radius) {
 		this.heatmap.setData({
 		  max: max,
 		  data: this.computeData(data),
-		  radius: radius,
 		});
 	}
 
